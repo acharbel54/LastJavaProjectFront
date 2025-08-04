@@ -1,0 +1,82 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #ffffff;
+}
+
+// Variables de couleurs inspirées de SNCF Connect
+:root {
+  --primary-color: #003366;
+  --secondary-color: #0066cc;
+  --accent-color: #00d4ff;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-gray: #f8f9fa;
+  --medium-gray: #6c757d;
+  --dark-gray: #343a40;
+}
+
+// Styles globaux
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  
+  &:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+  }
+}
+
+// Personnalisation Material Design
+.mat-mdc-raised-button.mat-primary {
+  --mdc-protected-button-container-color: var(--primary-color);
+  
+  &:hover {
+    --mdc-protected-button-container-color: var(--secondary-color);
+  }
+}
+
+.mat-mdc-form-field {
+  .mat-mdc-form-field-focus-overlay {
+    background-color: var(--accent-color);
+  }
+}
+
+// Animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+// Responsive utilities
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+}
